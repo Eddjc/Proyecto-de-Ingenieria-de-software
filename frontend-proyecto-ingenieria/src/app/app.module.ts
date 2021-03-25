@@ -32,8 +32,7 @@ const routes: Routes = [
   {path:'',redirectTo:'/inico', pathMatch: 'full'},
   {path: 'inicio',component: InicioComponent},
   {path: 'contrato',component: ContratoComponent},
-  {path: 'registro', component: RegistroUsuariosComponent}
-  
+  {path: 'registro', component: RegistroUsuariosComponent},
 ];
 
 @NgModule({
