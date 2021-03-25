@@ -14,6 +14,16 @@ import { NavbardComponent } from './componentes/navbard/navbard.component';
 import { SidebardComponent } from './componentes/sidebard/sidebard.component';
 import { DashboardComponent } from './paginas/dashboard/dashboard.component';
 import { UsuariosComponent } from './paginas/usuarios/usuarios.component';
+import { SidebardClienteComponent } from './componentes/sidebard-cliente/sidebard-cliente.component';
+import { NavbardClienteComponent } from './componentes/navbard-cliente/navbard-cliente.component';
+import { DashboardClienteComponent } from './paginas/dashboard-cliente/dashboard-cliente.component';
+import { ProductosComponent } from './paginas/productos/productos.component';
+import { CategoriasComponent } from './paginas/categorias/categorias.component';
+import { GaleriaComponent } from './paginas/galeria/galeria.component';
+import { ClientesComponent } from './paginas/clientes/clientes.component';
+import { DenunciasComponent } from './paginas/denuncias/denuncias.component';
+
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/inico', pathMatch: 'full'},
@@ -32,7 +42,17 @@ const routes: Routes = [
     NavbardComponent,
     SidebardComponent,
     DashboardComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    SidebardClienteComponent,
+    NavbardClienteComponent,
+    DashboardClienteComponent,
+    ProductosComponent,
+    CategoriasComponent,
+    GaleriaComponent,
+    ClientesComponent,
+    DenunciasComponent,
+    
+    
   ],
   imports: [
     BrowserModule,

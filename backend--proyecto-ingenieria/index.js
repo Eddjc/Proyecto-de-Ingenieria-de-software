@@ -12,6 +12,10 @@ app.use(cors());
 
 // Rutas
 app.use('/user', require('./routes/user'));
+app.use('/producto', require('./routes/producto'));
+app.use('/categoria', require('./routes/categoria'));
+
+
 
 
 
@@ -19,5 +23,5 @@ app.listen(3500, () => {
 
     sequelize.sync(force =true).then(con => console.log('Conectado'));
 
-    console.log(`Server on port http://localhost:3000`)
+    console.log(`Server on port http://localhost:3500`)
 });
