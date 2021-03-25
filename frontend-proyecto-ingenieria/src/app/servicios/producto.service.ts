@@ -13,13 +13,4 @@ export class ProductoService {
     return this.http.get(this.urlApi);
 
   }
-
-
-
-
-
-
-
-
-
 }
