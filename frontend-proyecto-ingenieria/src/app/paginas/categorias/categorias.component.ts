@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+=======
+import { CategoriaService } from 'src/app/servicios/categoria.service';
+>>>>>>> b22e48c8e545297fcf8549d7b7e975162b9dcba8
 
 @Component({
   selector: 'app-categorias',
@@ -9,6 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CategoriasComponent implements OnInit {
 
+<<<<<<< HEAD
   formularioCategoria = new FormGroup({
     nombre: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', [Validators.required])
@@ -44,4 +49,27 @@ export class CategoriasComponent implements OnInit {
         }
       });
   }  
+=======
+  categorias: any = [];
+
+  constructor(private serviceCategoria: CategoriaService) { }
+
+  ngOnInit(): void {
+
+    this.obtenerCategorias();
+
+  }
+
+  obtenerCategorias() {
+    this.serviceCategoria.obtenerCategorias().subscribe((data: any) => {
+
+      console.log(data);
+      if (!data.mensaje) {
+        this.categorias = data
+      }
+
+    });
+  }
+
+>>>>>>> b22e48c8e545297fcf8549d7b7e975162b9dcba8
 }
