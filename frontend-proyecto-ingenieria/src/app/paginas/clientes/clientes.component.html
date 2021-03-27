@@ -1,5 +1,9 @@
 <table class="table">
+<<<<<<< HEAD
   <thead>
+=======
+  <thead class="thead-light">
+>>>>>>> 4b4a7e5c38ce16dd5139a00090ac950d128ad0dc
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nombre</th>
@@ -11,15 +15,26 @@
     </tr>
   </thead>
   <tbody>
+<<<<<<< HEAD
     <tr *ngFor="let persona of personas;let i = index">
        <td>{{persona.id}}</td>
       <td>{{persona.nombre}}</td>
       <td>{{persona.apellido}}</td>
+=======
+    <tr *ngFor="let persona of personas;">
+       <td>{{persona.id}}</td>
+      <td>{{persona.nombre}}</td>
+      <td>{{persona.apellido}}</td>  
+>>>>>>> 4b4a7e5c38ce16dd5139a00090ac950d128ad0dc
       <td>{{persona.direccion}}</td>
       <td>{{persona.genero}}</td>
       <td>{{persona.correo}}</td>
       <td>{{persona.telefono}}</td>
+<<<<<<< HEAD
       <td><button type="button" class="btn btn-danger" (click)="eliminar(i)">X</button></td>
+=======
+      <td><button type="button" class="btn btn-danger" (click)="eliminar(persona.id)">X</button></td>
+>>>>>>> 4b4a7e5c38ce16dd5139a00090ac950d128ad0dc
     </tr>
   </tbody>
 </table>

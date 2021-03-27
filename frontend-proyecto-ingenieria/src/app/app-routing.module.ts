@@ -9,12 +9,17 @@ import { ProductosComponent } from './paginas/productos/productos.component';
 import { UsuariosComponent } from './paginas/usuarios/usuarios.component';
 import { RegistroUsuariosComponent} from './registro-usuarios/registro-usuarios.component'
 import { ClientesComponent } from './paginas/clientes/clientes.component';
+<<<<<<< HEAD
+=======
+import { DenunciasComponent } from './paginas/denuncias/denuncias.component';
+>>>>>>> 4b4a7e5c38ce16dd5139a00090ac950d128ad0dc
 
 const routes: Routes = [
   //{path: '', component: RegistroUsuariosComponent},
   {path: 'registro', component: RegistroUsuariosComponent},
   {path: 'contrato', component:ContratoComponent},
   {path: 'dashboard', component:DashboardComponent, children:[
+<<<<<<< HEAD
   
     {path: 'usuario', component:UsuariosComponent},
     {path: 'clientes', component:ClientesComponent},
@@ -22,6 +27,15 @@ const routes: Routes = [
     {
       path: 'usuario', component:UsuariosComponent, 
     }
+=======
+    
+    {path: 'usuario', component:UsuariosComponent},
+    { path: 'categorias',component:CategoriasComponent},
+    {path: 'clientes', component:ClientesComponent},
+    { path: 'denuncias', component:DenunciasComponent}
+
+
+>>>>>>> 4b4a7e5c38ce16dd5139a00090ac950d128ad0dc
   ]
   }, 
   {

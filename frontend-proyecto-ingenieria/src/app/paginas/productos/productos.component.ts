@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CategoriaService } from 'src/app/servicios/categoria.service';
 import { ProductoService } from 'src/app/servicios/producto.service';
+import { SubirImagenService } from 'src/app/servicios/subir-imagen.service';
 
 @Component({
   selector: 'app-productos',
@@ -10,11 +13,24 @@ export class ProductosComponent implements OnInit {
 
   productos: any = [];
 
-  constructor(private serviceProducto : ProductoService) { }
+  formularioProducto = new FormGroup({
+    nombre: new FormControl('', [Validators.required]),
+    descripcion: new FormControl('', [Validators.required]),
+    estado: new FormControl('', [Validators.required]),
+    precio: new FormControl('', [Validators.required]),
+    categoriumId: new FormControl('', [Validators.required])
+  });
+  constructor(private serviceProducto: ProductoService, private serviceCategoria: CategoriaService, private serviceImagen: SubirImagenService) { }
 
+  categorias: any = [];
+  urlImagen: string = '';
+  imagenSubida = false;
   ngOnInit(): void {
 
     this.obtenerProductos();
+    this.obtenerCategorias();
+  
+
   }
 
   obtenerProductos() {
@@ -28,10 +44,54 @@ export class ProductosComponent implements OnInit {
     });
   }
 
+  obtenerProducto() {
+    this.serviceProducto.obtenerProducto('1').subscribe((data: any) => {
+      console.log(data);
+    });
+  }
+
+  subirImagen(e: any) {
+    let file = e.target.files[0];
+    console.log(e.target.files[0]);
+    let formData = new FormData();
+
+    formData.append('upload_preset', 'imagenes');
+    formData.append('file', e.target.files[0]);
+
+    this.serviceImagen.subirImagen(formData).subscribe((res: any) => {
+      console.log(res);
+      this.urlImagen = res.url;
+      this.imagenSubida = true;
+    });;
 
 
+  }
 
 
+  guardar() {
+    console.log(this.formularioProducto.value); //req.body.data.nombre, req.body.img.nombre,
+
+    this.serviceProducto.guardarProducto({ data: this.formularioProducto.value, img: this.urlImagen }).subscribe((res: any) => {
+      console.log(res);
+      this.obtenerProductos();
+    });
+
+
+  }
+  eliminarProducto(idProducto: any) {
+    this.serviceProducto.eliminarProducto(idProducto).subscribe((res: any) => {
+      console.log(res);
+      this.obtenerProductos();
+    });
+
+
+  }
+
+  obtenerCategorias(){
+    this.serviceCategoria.obtenerCategorias().subscribe((data:any)=>{
+      this.categorias = data;
+    });
+  }
 
 
 }

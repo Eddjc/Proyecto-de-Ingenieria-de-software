@@ -75,10 +75,14 @@ const deleteCategoria = async (req = request, res = response) => {
     });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     res.send({codigoResultado:1 ,mensaje: `Categoria eliminada` });
 =======
     res.send({ mensaje: `Categoria eliminado con exito` });
 >>>>>>> b22e48c8e545297fcf8549d7b7e975162b9dcba8
+=======
+    res.send({ codigoResultado:1 ,mensaje: `Categoria eliminado con exito` });
+>>>>>>> 4b4a7e5c38ce16dd5139a00090ac950d128ad0dc
 
 }
 

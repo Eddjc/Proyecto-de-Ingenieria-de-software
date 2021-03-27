@@ -73,7 +73,11 @@ const deleteUser = async (req = request, res = response) => {
         }
     });
 
+<<<<<<< HEAD
     res.send({codigoResultado:1 ,mensaje: `Usuario eliminado con exito` });
+=======
+    res.send({ codigoResultado:1, mensaje: `Usuario eliminado con exito` });
+>>>>>>> 4b4a7e5c38ce16dd5139a00090ac950d128ad0dc
 
 }
 
