@@ -20,13 +20,8 @@ import { DashboardClienteComponent } from './paginas/dashboard-cliente/dashboard
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { CategoriasComponent } from './paginas/categorias/categorias.component';
 import { GaleriaComponent } from './paginas/galeria/galeria.component';
-<<<<<<< HEAD
 import { ClientesComponent } from './paginas/clientes/clientes.component';
 import { DenunciasComponent } from './paginas/denuncias/denuncias.component';
-=======
->>>>>>> b22e48c8e545297fcf8549d7b7e975162b9dcba8
-
-
 
 const routes: Routes = [
   {path:'',redirectTo:'/inico', pathMatch: 'full'},
@@ -51,12 +46,8 @@ const routes: Routes = [
     ProductosComponent,
     CategoriasComponent,
     GaleriaComponent,
-<<<<<<< HEAD
     ClientesComponent,
-    DenunciasComponent,
-=======
->>>>>>> b22e48c8e545297fcf8549d7b7e975162b9dcba8
-    
+    DenunciasComponent,    
     
   ],
   imports: [
